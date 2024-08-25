@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tandt53/xpath-builder.git'.git"
+    "url": "https://github.com/tandt53/xpath-builder"
   },
   "author": "Tan Do <dothetan.040490@gmail.com>",
   "bugs": {
