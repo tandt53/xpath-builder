@@ -1,8 +1,8 @@
 {
   "name": "@tandt53/xpath-builder",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Helpers for building XPath expressions using in automation tests (Web & Mobile)",
-  "main": "index.js",
+  "main": "dist/index.js",
   "types": "index.d.ts",
   "scripts": {
     "build": "tsc",
@@ -37,8 +37,13 @@
     "url": "https://github.com/tandt53/xpath-builder.git'/issues"
   },
   "homepage": "https://github.com/tandt53/xpath-builder.git'#readme",
-  "directories": {
-    "src": "src",
-    "test": "test"
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "import": "*.js",
+      "require": "*.js"
+    },
+    "./package.json": "./package.json"
   }
 }
