@@ -1,10 +1,13 @@
 {
   "name": "@tandt53/xpath-builder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Helpers for building XPath expressions using in automation tests (Web & Mobile)",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "npx jest"
+    "build": "tsc",
+    "test": "npx jest",
+    "package": "npm pack"
   },
   "keywords": [],
   "license": "MIT",
