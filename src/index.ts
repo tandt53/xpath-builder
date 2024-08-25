@@ -1,4 +1,6 @@
 import {XpathBuilder} from "./XpathBuilder";
+import {Attribute, Condition} from "./XNode";
+import {IXpath} from "./IXpath";
 
 const xpath = new XpathBuilder()
     .node({
@@ -7,7 +9,7 @@ const xpath = new XpathBuilder()
             {name: "class", value: "container", operation: "contains"},
             {name: "id", value: "main", operation: "equals"}
         ],
-        attributeLogic: "OR" // OR condition between attributes
+        condition: "OR" // OR condition between attributes
     })
     .child({
         tag: "span",
@@ -21,7 +23,7 @@ const xpath = new XpathBuilder()
     .precedingSibling({
         tag: "h1"
     })
-    .toString();
+    .build();
 
 console.log(xpath);
 
@@ -32,7 +34,7 @@ const xpath2 = new XpathBuilder()
             {name: "class", value: "container", operation: "contains"},
             {name: "id", value: "main", operation: "equals"}
         ],
-        attributeLogic: "AND" // AND condition between attributes
+        condition: "AND" // AND condition between attributes
     })
     .node({
         tag: "span",
@@ -40,5 +42,38 @@ const xpath2 = new XpathBuilder()
             {name: "data-label", value: "description", operation: "equals"}
         ]
     })
-    .toString();
+    .build();
 console.log(xpath2);
+
+
+// custom xpath function
+export function h1(attributes?: Attribute[], attributeLogic?: Condition, index?: number, isAbsolute?: boolean): IXpath {
+    return new XpathBuilder().node({
+        tag: "h1",
+        attributes,
+        condition: attributeLogic,
+        index,
+        isAbsolute
+    });
+}
+
+const h1Xpath = h1().build();
+console.log(h1Xpath);
+// Output: //h1
+
+const xpath3 = new XpathBuilder().node({
+    tag: 'div',
+    attributes: [
+        {
+            name: 'id',
+            value: 'some-id',
+            operation: 'contains'
+        }, {
+            name: 'class',
+            value: 'some-class'
+        }
+    ],
+    condition: 'OR'
+}).build();
+
+console.log(xpath3);

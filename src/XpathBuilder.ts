@@ -59,7 +59,7 @@ export class XpathBuilder implements IXpath {
         let xpath = n.tag;
 
         if (n.attributes && n.attributes.length > 0) {
-            const logic = n.attributeLogic || "AND"; // Default to "AND" if not specified
+            const logic = n.condition || "AND"; // Default to "AND" if not specified
             const attributeConditions = n.attributes.map(attr => {
                 const operation = attr.operation || "equals"; // Default to "equals" if not specified
                 if (operation === "equals") {
@@ -82,7 +82,7 @@ export class XpathBuilder implements IXpath {
         return `${absChars}${prefix ? prefix : ''}${xpath}`;
     }
 
-    toString(): string {
+    build(): string {
         return this.xpathParts.join("");
     }
 }

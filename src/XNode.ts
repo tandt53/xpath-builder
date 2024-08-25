@@ -6,12 +6,12 @@ export interface Attribute {
     operation?: Operation;
 }
 
-export type Logic = "AND" | "OR";
+export type Condition = "AND" | "OR";
 
 export interface XNode {
     tag: string;
     attributes?: Attribute[];
-    attributeLogic?: Logic; // Field for specifying AND or OR
+    condition?: Condition; // Field for specifying AND or OR
     index?: number;
     isAbsolute?: boolean;
 }

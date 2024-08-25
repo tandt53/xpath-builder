@@ -21,5 +21,5 @@ export interface IXpath {
 
     precedingSibling(n: XNode): IXpath;
 
-    toString(): string;
+    build(): string;
 }

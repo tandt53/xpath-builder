@@ -8,7 +8,7 @@ describe("XNode validation with detailed error messages", () => {
             attributes: [
                 { name: "class", value: "container", operation: "contains" }
             ],
-            attributeLogic: "AND",
+            condition: "AND",
             index: 1,
             isAbsolute: true
         };
