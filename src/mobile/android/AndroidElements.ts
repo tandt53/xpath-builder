@@ -2,7 +2,7 @@ import {Attribute, Condition} from "../../XNode";
 import {XpathBuilder} from "../../XpathBuilder";
 import {IXpath} from "../../IXpath";
 
-const enum TAG {
+export const enum TAG {
     TextView = "android.widget.TextView",
     Button = "android.widget.Button",
     EditText = "android.widget.EditText",
