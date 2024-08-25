@@ -1,15 +1,14 @@
 {
-  "name": "xpath-builder",
+  "name": "@tandt53/xpath-builder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Helpers for building XPath expressions using in automation tests (Web & Mobile)",
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon",
     "test": "npx jest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^22.5.0",
@@ -27,5 +26,17 @@
   },
   "dependencies": {
     "zod": "^3.23.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tandt53/xpath-builder.git'.git"
+  },
+  "author": "Tan Do <dothetan.040490@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/tandt53/xpath-builder.git'/issues"
+  },
+  "homepage": "https://github.com/tandt53/xpath-builder.git'#readme",
+  "directories": {
+    "test": "test"
   }
 }
