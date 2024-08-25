@@ -1,16 +1,15 @@
 {
   "name": "@tandt53/xpath-builder",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Helpers for building XPath expressions using in automation tests (Web & Mobile)",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "npx jest",
     "package": "npm pack"
   },
   "keywords": [],
-  "type": "module",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.12",
@@ -40,8 +39,8 @@
   "homepage": "https://github.com/tandt53/xpath-builder.git'#readme",
   "exports": {
     ".": {
-      "default": "./dist/index.js",
-      "types": "./dist/index.d.ts",
+      "default": "./index.js",
+      "types": "./index.d.ts",
       "import": "*.js",
       "require": "*.js"
     },
