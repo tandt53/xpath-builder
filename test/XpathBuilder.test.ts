@@ -9,7 +9,7 @@ describe("XpathBuilder", () => {
                     {name: "class", value: "container", operation: "contains"}
                 ]
             })
-            .build();
+            .xpath();
 
         expect(xpath).toBe("//div[contains(@class, 'container')]");
     });
@@ -30,7 +30,7 @@ describe("XpathBuilder", () => {
                     {name: "data-label", value: "description", operation: "equals"}
                 ]
             })
-            .build();
+            .xpath();
 
         expect(xpath).toBe("//div[contains(@class, 'container') or @id='main']//child::span[@data-label='description']");
     });
@@ -46,7 +46,7 @@ describe("XpathBuilder", () => {
             .ancestor({
                 tag: "section"
             })
-            .build();
+            .xpath();
 
         expect(xpath).toBe("//div[@class='content']//ancestor::section");
     });
@@ -59,7 +59,7 @@ describe("XpathBuilder", () => {
             .precedingSibling({
                 tag: "h1"
             })
-            .build();
+            .xpath();
 
         expect(xpath).toBe("//h2//preceding-sibling::h1");
     });

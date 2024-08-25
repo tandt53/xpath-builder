@@ -18,7 +18,7 @@ const xpath = new XpathBuilder().node({
         name: 'id',
         value: 'some-id'
     }]
-}).build();
+}).xpath();
 
 console.log(xpath);
 // Output: //div[@id='some-id']
@@ -40,7 +40,7 @@ const xpath = new XpathBuilder().node({
             value: 'some-class'
         }
     ]
-}).build();
+}).xpath();
 
 console.log(xpath);
 // Output: //div[@id='some-id' and @class='some-class']
@@ -64,7 +64,7 @@ const xpath3 = new XpathBuilder().node({
         }
     ],
     condition: 'OR'
-}).build();
+}).xpath();
 
 console.log(xpath3);
 // Output: //div[contains(@id, 'some-id') or @class='some-class']
@@ -96,7 +96,7 @@ const xpath = new XpathBuilder()
     .precedingSibling({
         tag: "h1"
     })
-    .build();
+    .xpath();
 
 console.log(xpath);
 // Output: //div[contains(@class, 'container') or @id='main']//child::span[@data-label='description']//ancestor::section//preceding-sibling::h1
@@ -119,6 +119,6 @@ export function h1(attributes?: Attribute[], attributeLogic?: Condition, index?:
     });
 }
 
-const h1Xpath = h1().build();
+const h1Xpath = h1().xpath();
 // Output: //h1
 ```

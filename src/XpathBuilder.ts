@@ -82,7 +82,7 @@ export class XpathBuilder implements IXpath {
         return `${absChars}${prefix ? prefix : ''}${xpath}`;
     }
 
-    build(): string {
+    xpath(): string {
         return this.xpathParts.join("");
     }
 }
