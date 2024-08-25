@@ -1,6 +1,6 @@
 {
   "name": "@tandt53/xpath-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helpers for building XPath expressions using in automation tests (Web & Mobile)",
   "main": "index.js",
   "scripts": {
