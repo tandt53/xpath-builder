@@ -1,9 +1,9 @@
 import {validateXNode} from "../src/validation/XNodeValidation";
-import {XNode} from "../src/XNode";
+import {INode} from "../src/INode";
 
 describe("XNode validation with detailed error messages", () => {
     it("should pass validation for a valid XNode object", () => {
-        const validXNode: XNode = {
+        const validXNode: INode = {
             tag: "div",
             attributes: [
                 { name: "class", value: "container", operation: "contains" }

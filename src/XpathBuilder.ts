@@ -1,60 +1,60 @@
 import {IXpath} from "./IXpath";
-import {XNode} from "./XNode";
+import {INode} from "./INode";
 
 export class XpathBuilder implements IXpath {
     private xpathParts: string[] = [];
 
-    node(n: XNode): IXpath {
+    node(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n));
         return this;
     }
 
-    following(n: XNode): IXpath {
+    following(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n, 'following::'));
         return this;
     }
 
-    ancestor(n: XNode): IXpath {
+    ancestor(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n, 'ancestor::'));
         return this;
     }
 
-    child(n: XNode): IXpath {
+    child(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n, 'child::'));
         return this;
     }
 
-    preceding(n: XNode): IXpath {
+    preceding(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n, 'preceding::'));
         return this;
     }
 
-    followingSibling(n: XNode): IXpath {
+    followingSibling(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n, 'following-sibling::'));
         return this;
     }
 
-    parent(n: XNode): IXpath {
+    parent(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n, 'parent::'));
         return this;
     }
 
-    self(n: XNode): IXpath {
+    self(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n, 'self::'));
         return this;
     }
 
-    descendant(n: XNode): IXpath {
+    descendant(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n, 'descendant::'));
         return this;
     }
 
-    precedingSibling(n: XNode): IXpath {
+    precedingSibling(n: INode): IXpath {
         this.xpathParts.push(this.buildNodeXPath(n, 'preceding-sibling::'));
         return this;
     }
 
-    private buildNodeXPath(n: XNode, prefix?: string): string {
+    private buildNodeXPath(n: INode, prefix?: string): string {
 
         let xpath = n.tag;
 

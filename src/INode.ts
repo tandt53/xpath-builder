@@ -8,7 +8,7 @@ export interface Attribute {
 
 export type Condition = "AND" | "OR";
 
-export interface XNode {
+export interface INode {
     tag: string;
     attributes?: Attribute[];
     condition?: Condition; // Field for specifying AND or OR

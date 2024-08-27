@@ -1,4 +1,4 @@
-export * from "./src/XNode";
+export * from "./src/INode";
 export * from "./src/IXpath";
 export * from "./src/XpathBuilder";
 

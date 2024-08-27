@@ -1,25 +1,25 @@
-import {XNode} from "./XNode";
+import {INode} from "./INode";
 
 export interface IXpath {
-    node(n: XNode): IXpath;
+    node(n: INode): IXpath;
 
-    child(n: XNode): IXpath;
+    child(n: INode): IXpath;
 
-    descendant(n: XNode): IXpath;
+    descendant(n: INode): IXpath;
 
-    ancestor(n: XNode): IXpath;
+    ancestor(n: INode): IXpath;
 
-    parent(n: XNode): IXpath;
+    parent(n: INode): IXpath;
 
-    self(n: XNode): IXpath
+    self(n: INode): IXpath
 
-    following(n: XNode): IXpath;
+    following(n: INode): IXpath;
 
-    followingSibling(n: XNode): IXpath;
+    followingSibling(n: INode): IXpath;
 
-    preceding(n: XNode): IXpath;
+    preceding(n: INode): IXpath;
 
-    precedingSibling(n: XNode): IXpath;
+    precedingSibling(n: INode): IXpath;
 
     xpath(): string;
 }

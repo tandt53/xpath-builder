@@ -1,5 +1,5 @@
 import {z} from "zod";
-import {XNode} from "../XNode";
+import {INode} from "../INode";
 
 // Define the Operation Enum
 const OperationEnum = z.enum(["equals", "contains"], {
@@ -52,7 +52,7 @@ function formatZodErrors(error: z.ZodError): string[] {
 }
 
 // Updated validateXNode function that passes validation messages
-export function validateXNode(input: any): ValidationResult<XNode> {
+export function validateXNode(input: any): ValidationResult<INode> {
     const result = XNodeSchema.safeParse(input);
     if (!result.success) {
         const errors = formatZodErrors(result.error);
@@ -63,7 +63,7 @@ export function validateXNode(input: any): ValidationResult<XNode> {
     }
     return {
         isValid: true,
-        data: result.data
+        data: result.data as INode,
     };
 }
 

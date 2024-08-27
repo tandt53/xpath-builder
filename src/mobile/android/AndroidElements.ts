@@ -1,6 +1,7 @@
-import {Attribute, Condition} from "../../XNode";
+import {Attribute, Condition} from "../../INode";
 import {XpathBuilder} from "../../XpathBuilder";
 import {IXpath} from "../../IXpath";
+import {NodeBuilder} from "../../NodeBuilder";
 
 export const enum TAG {
     TextView = "android.widget.TextView",
@@ -10,52 +11,57 @@ export const enum TAG {
     Checkbox = "android.widget.CheckBox",
 }
 
-export function textView(attributes?: Attribute[], attributeLogic?: Condition, index?: number, isAbsolute?: boolean): IXpath {
+export function textView(nodeBuilder: NodeBuilder): IXpath {
+    return new XpathBuilder().node(nodeBuilder.build());
+}
+
+export function textView(text: string, exactMatch: boolean = true): IXpath {
     return new XpathBuilder().node({
         tag: TAG.TextView,
-        attributes,
-        condition: attributeLogic,
-        index,
-        isAbsolute
+        attributes: [{name: "text", value: text, operation: exactMatch ? "equals" : "contains"}],
     });
 }
 
-export function button(attributes?: Attribute[], attributeLogic?: Condition, index?: number, isAbsolute?: boolean): IXpath {
+export function button(nodeBuilder: NodeBuilder): IXpath {
+    return new XpathBuilder().node(nodeBuilder.build());
+}
+
+export function button(text: string, exactMatch: boolean = true): IXpath {
     return new XpathBuilder().node({
         tag: TAG.Button,
-        attributes,
-        condition: attributeLogic,
-        index,
-        isAbsolute
+        attributes: [{name: "text", value: text, operation: exactMatch ? "equals" : "contains"}],
     });
 }
 
-export function editText(attributes?: Attribute[], attributeLogic?: Condition, index?: number, isAbsolute?: boolean): IXpath {
+export function editText(nodeBuilder: NodeBuilder): IXpath {
+    return new XpathBuilder().node(nodeBuilder.build());
+}
+
+export function editText(hint: string, exactMatch: boolean = true): IXpath {
     return new XpathBuilder().node({
         tag: TAG.EditText,
-        attributes,
-        condition: attributeLogic,
-        index,
-        isAbsolute
+        attributes: [{name: "hint", value: hint, operation: exactMatch ? "equals" : "contains"}],
     });
 }
 
-export function imageView(attributes?: Attribute[], attributeLogic?: Condition, index?: number, isAbsolute?: boolean): IXpath {
+export function imageView(nodeBuilder: NodeBuilder): IXpath {
+    return new XpathBuilder().node(nodeBuilder.build());
+}
+
+export function imageView(description: string, exactMatch: boolean = true): IXpath {
     return new XpathBuilder().node({
         tag: TAG.ImageView,
-        attributes,
-        condition: attributeLogic,
-        index,
-        isAbsolute
+        attributes: [{name: "content-desc", value: description, operation: exactMatch ? "equals" : "contains"}],
     });
 }
 
-export function checkbox(attributes?: Attribute[], attributeLogic?: Condition, index?: number, isAbsolute?: boolean): IXpath {
+export function checkbox(nodeBuilder: NodeBuilder): IXpath {
+    return new XpathBuilder().node(nodeBuilder.build());
+}
+
+export function checkbox(text: string, exactMatch: boolean = true): IXpath {
     return new XpathBuilder().node({
         tag: TAG.Checkbox,
-        attributes,
-        condition: attributeLogic,
-        index,
-        isAbsolute
+        attributes: [{name: "text", value: text, operation: exactMatch ? "equals" : "contains"}],
     });
 }
